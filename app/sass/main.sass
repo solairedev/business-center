@@ -1,0 +1,172 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "base"
+
+@mixin flex
+	display: flex 
+	flex-wrap: wrap
+
+@mixin flex-center
+	@include flex
+	justify-content: center
+	align-items: center
+
+
+@mixin flex-between
+	@include flex
+	justify-content: space-between
+	align-items: center
+
+.container
+	max-width: 1280px 
+	margin: 0 auto
+	padding: 0 15px
+
+.section 
+	.section-content 
+		max-width: 1160px
+		margin: 0 auto
+		color: white
+
+.is-accent
+	color: $accent
+
+.is-action
+	color: $action
+
+.navbar
+	background: #393c45 
+	width: 100%
+	.navbar-content
+		@include flex-between
+		flex-direction: row
+
+		a
+			font-size: 20px
+			text-transform: uppercase
+			color: white
+			&:hover
+					color: darken(white,10%)
+
+		.menu 
+			@include flex-between
+			a
+				margin-left: 70px
+				padding: 20px 0
+
+				
+		.phone 
+			width: auto
+			display: flex
+			a
+				font-weight: bold
+				padding: 20px 0
+			
+
+.button
+	display: inline-block
+	text-align: center
+	text-transform: uppercase
+
+	font-size: 17px
+	font-weight: 500
+
+	cursor: pointer
+	
+	height: 54px;
+	border-radius: 27px;
+	background-color: $action
+	color: $button-text
+
+	padding: 8px 20px
+	border: 1px solid rgba(255, 255, 255, 0)
+	line-height: 1.2
+	width: 252px;
+
+	img
+		float: left
+	span 
+		float: right
+		position: relative
+		top: 8px
+
+
+.button.is-action
+	background-color: $action
+
+	&:hover, &:focus
+		background-color: darken($action,10%)
+
+
+.header 
+	padding: 10px 0;
+	background: white
+
+.header-content
+	@include flex-between
+
+	.logo
+		// width: 215px
+		// height: 90px
+		margin-left: 45px
+		img
+			width: 100%;
+			object-fit: cover;
+	.side
+		@include flex-between
+
+		.info 
+			@include flex-between
+			margin-right: 95px
+			font-size: 17px 
+			min-width: 240px
+
+		.call
+
+.banner
+	font-weight: 800
+	text-align: center
+	text-transform: uppercase
+	
+	padding-top: 80px
+
+	.title
+		i
+			font-style: inherit
+			color: white
+		span 
+
+
+.bg-with-shadow
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../img/main-bg.jpg);
+	background-size: cover
+	background-postion: bottom
+		
+
+.list-advantages
+	width: 800px
+	margin: 70px auto 0 auto
+
+	.row
+		@include flex-between
+		align-items: flex-start
+	
+		.advantage-item
+			@include flex-center
+			flex-direction: column
+
+			max-width: 260px
+
+			text-align: center
+
+			.title
+				margin-top: 20px
+				text-transform: uppercase
+				margin-bottom: 0
+
+			.description 
+				font-weight: 300
+
+
+@import "media" // Всегда в конце
