@@ -29,6 +29,33 @@
 		margin: 0 auto
 		color: white
 
+	.section-info
+		text-align: center
+		max-width: 800px
+		margin: 0 auto
+		.section-title
+			text-transform: uppercase		
+			font-size: 35px
+			margin-top: 65px
+			&::after
+				content: " "
+				display: block
+				
+				position: relative
+				left: 50%
+				margin-left: -106px
+				margin-top: 30px
+				padding-bottom: 20px
+
+				width: 212px
+				height: 17px
+				background: url(../img/after-title.png)
+
+		.section-description
+			font-weight: 300
+			font-size: 20px
+
+
 .is-accent
 	color: $accent
 
@@ -127,6 +154,10 @@
 	padding: 10px 0;
 	background: white
 
+.row
+		@include flex-between
+		align-items: flex-start
+
 .header-content
 	@include flex-between
 
@@ -171,26 +202,22 @@
 	width: 800px
 	margin: 70px auto 0 auto
 	padding-bottom: 170px
-
-	.row
-		@include flex-between
-		align-items: flex-start
 	
-		.advantage-item
-			@include flex-center
-			flex-direction: column
+	.advantage-item
+		@include flex-center
+		flex-direction: column
 
-			max-width: 260px
+		max-width: 260px
 
-			text-align: center
+		text-align: center
 
-			.title
-				margin-top: 20px
-				text-transform: uppercase
-				margin-bottom: 0
+		.title
+			margin-top: 20px
+			text-transform: uppercase
+			margin-bottom: 0
 
-			.description 
-				font-weight: 300
+		.description 
+			font-weight: 300
 
 .call-to-action 
 	width: 880px
@@ -213,7 +240,19 @@
 
 	.subtitle 
 		margin-top: 5px
-		font-size: 16px;
+		font-size: 16px
+
+	&::before
+		content: " ";
+		display: block;
+		width: 102%;
+		border-top: 2px solid white;
+		height: 90px;
+		position: absolute;
+		left: -1%;
+		border-left: 2px solid white;
+		background: transparent;
+		border-right: 2px solid white;
 
 	&::after
 		content: " "
@@ -223,8 +262,9 @@
 		border-left: 440px solid white;
 		border-right: 440px solid white;
 		background: none;
-		position: relative;
-		bottom: 3px;
+
+
+
 
 	.call-form
 		@include flex-between
@@ -234,7 +274,7 @@
 			width: 250px
 			font-weight: 500
 			font-size: 14px
-		&.button
+		.button
 			padding: 0
 
 	.pricacy
@@ -256,6 +296,67 @@
 			left: 50%;
 			margin-left: -160px;
 			margin-top: 25px;
+
+.offers
+
+.offers
+	width: 1030px
+	margin: 0 auto
+	.offer-item
+		width: 274px
+		.offer-img
+			position: relative
+			width: 100%
+			img
+				object-fit: cover
+				width: 100%
+				height: 180px
+
+		.offer-type
+			display: block;
+			font-size: 14px;
+			padding: 5px 0;
+			position: absolute;
+			top: 36px;
+			left: 14px;
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 700;
+			background: #8be685;
+			text-align: center;
+			transform: rotate(-45deg);
+			width: 70px;
+
+			span
+				position: relative;
+				left: -5px;
+
+
+			&::before,
+			&::after 
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				bottom: 0;
+				z-index: -1;
+				
+				background-color: #8be685;
+
+
+			&::before 
+				transform: skew(45deg);
+				left: 35px;
+
+			&::after 
+				transform: skew(-45deg);
+				right: 35px;
+				left: auto;
+
+
+			
+
 
 
 
