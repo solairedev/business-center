@@ -19,7 +19,7 @@
 	align-items: center
 
 .container
-	max-width: 1280px 
+	max-width: 1165px 
 	margin: 0 auto
 	padding: 0 15px
 
@@ -62,6 +62,7 @@
 .is-action
 	color: $action
 
+
 .navbar
 	background: #393c45 
 	width: 100%
@@ -73,14 +74,18 @@
 			font-size: 20px
 			text-transform: uppercase
 			color: white
-			&:hover
+			&:hover, &:focus
 					color: darken(white,10%)
 
 		.menu 
 			@include flex-between
+
 			a
 				margin-left: 70px
 				padding: 20px 0
+
+				&:first-child
+					margin-left: 15px
 
 				
 		.phone 
@@ -101,22 +106,25 @@
 
 	cursor: pointer
 	
-	height: 54px;
 	border-radius: 27px;
-	background-color: $action
 	color: $button-text
 
 	padding: 8px 20px
 	border: 1px solid rgba(255, 255, 255, 0)
 	line-height: 1.2
-	width: 252px;
+	
+
+	transition-property: all;
+	transition-duration: .1s;
+	transition-timing-function: linear;
 
 	img
 		float: left
-	span 
-		float: right
-		position: relative
-		top: 8px
+	
+	&.is-invert
+		background-color: white
+		
+
 
 
 .button.is-action
@@ -125,7 +133,42 @@
 	&:hover, &:focus
 		background-color: darken($action,10%)
 
+.button.is-accent
+	color: $accent
+	border: 3px solid $accent
 
+
+	&:hover, &:focus
+		background: $accent
+		color: white
+
+
+
+.button.is-primary
+	border: 8px solid #e6e6e6;
+	padding: 25px 43px;
+	font-weight: bold
+	background: $accent;
+	font-size: 20px;
+	border-radius: 60px;
+	color: white;
+	position: relative
+
+
+	&:hover, &:focus
+		background: white
+		color: $accent
+
+	&::after
+		content: " "
+		width: 68px	
+		height: 46px
+		background: url(../img/bookmark.png) bottom;
+		background-size: cover
+		position: absolute;
+		left: 50%;
+		margin-left: -34px;
+		margin-top: 49px;
 
 .input
 	display: inline-block;
@@ -164,7 +207,7 @@
 	.logo
 		// width: 215px
 		// height: 90px
-		margin-left: 45px
+		// margin-left: 45px
 		img
 			width: 100%;
 			object-fit: cover;
@@ -178,6 +221,15 @@
 			min-width: 240px
 
 		.call
+			.button
+				span 
+					position: relative;
+					top: 8px;
+					left: 3px;
+				img
+					position: relative
+					right: 3px
+
 
 .banner
 	font-weight: 800
@@ -190,10 +242,10 @@
 		i
 			font-style: inherit
 			color: white
-		span 
 
 
-.bg-with-shadow
+
+#hello
 	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../img/main-bg.jpg) bottom;
 	background-size: cover
 		
@@ -235,7 +287,7 @@
 		text-transform: uppercase
 
 	.title 
-		padding-top: 10px
+		padding-top: 24px
 		margin-bottom: 0
 
 	.subtitle 
@@ -250,6 +302,7 @@
 		height: 90px;
 		position: absolute;
 		left: -1%;
+		top: 9px
 		border-left: 2px solid white;
 		background: transparent;
 		border-right: 2px solid white;
@@ -270,12 +323,12 @@
 		@include flex-between
 		max-width: 90%;
 		margin: 0 auto
-		input
+		input, .button
 			width: 250px
 			font-weight: 500
 			font-size: 14px
 		.button
-			padding: 0
+			padding: 15px 5px
 
 	.pricacy
 		font-size: 12px;
@@ -297,13 +350,16 @@
 			margin-left: -160px;
 			margin-top: 25px;
 
-.offers
+		p
+			margin: 0
 
 .offers
 	width: 1030px
 	margin: 0 auto
 	.offer-item
+		box-shadow: 0px 0px 40px 0px rgba(236,236,236,0.75);
 		width: 274px
+		margin-top: 70px
 		.offer-img
 			position: relative
 			width: 100%
@@ -312,24 +368,22 @@
 				width: 100%
 				height: 180px
 
-		.offer-type
+		.offer-status
 			display: block;
 			font-size: 14px;
 			padding: 5px 0;
 			position: absolute;
-			top: 36px;
-			left: 14px;
+			top: 22px;
+			left: 23px;
 			color: #fff;
 			text-transform: uppercase;
 			font-weight: 700;
 			background: #8be685;
 			text-align: center;
-			transform: rotate(-45deg);
-			width: 70px;
+			transform: rotate(-35deg);
+			width: 55px;
 
-			span
-				position: relative;
-				left: -5px;
+			
 
 
 			&::before,
@@ -346,16 +400,91 @@
 
 
 			&::before 
-				transform: skew(45deg);
+				transform: skew(55deg);
 				left: 35px;
 
 			&::after 
-				transform: skew(-45deg);
+				transform: skew(-35deg);
 				right: 35px;
 				left: auto;
 
+			span
+				position: relative;
+				left: -15px;
 
+		.offer-type
+			text-transform: uppercase
+			background: #4abdff
+			color: white
+			font-weight: bold
+			text-align: center
+			padding-top: 10px
+			padding-bottom: 10px
+			width: 200px
+			position: relative
+			margin: -30px auto 0 auto
 			
+			&::before
+				content: " ";
+				display: block;
+				width: calc(100% + 12px);
+				border-top: 3px solid #fff;
+				height: 34px;
+				position: absolute;
+				left: -6px;
+				border-left: 3px solid #fff;
+				background: 0 0;
+				top: -6px
+				border-right: 3px solid #fff;
+
+
+		.offer-name	
+			font-weight: bold
+			text-transform: uppercase
+			text-align: center
+			padding: 20px 0
+			border-bottom: 1px solid #e5e5e5
+
+		.offer-info
+			width: 100%
+			
+			text-transform: uppercase
+			font-size: 14px;
+			width: 220px
+			margin: 0 auto
+			color: #919191
+			padding-bottom: 25px
+			
+
+
+			p
+				margin-top: 10px
+				margin-bottom: 0
+				@include flex-between
+
+				&:first-child
+					margin-top: 25px
+
+			.offer-property
+				font-weight: 700
+		
+		.offer-action
+			border-top: 1px solid #e5e5e5
+			width: 100%;
+			padding: 25px 0
+			@include flex-center
+
+			.button
+				font-size: 13px
+				font-weight: 700
+				width: 80%
+				height: auto
+
+	.offer-more
+		margin-top: 60px
+		@include flex-center
+			
+
 
 
 
