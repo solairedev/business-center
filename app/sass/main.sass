@@ -54,7 +54,8 @@
 		.section-title
 			text-transform: uppercase		
 			font-size: 35px
-			margin-top: 0;
+			max-width: 630px;
+			margin: 0 auto;
 
 			&::after
 				content: " "
@@ -73,11 +74,14 @@
 		.section-description
 			font-weight: 300
 			font-size: 20px
+			max-width: 600px;
+
+			margin-left: auto;
+			margin-right: auto;
 
 
 .is-accent
 	color: $accent
-
 .is-action
 	color: $action
 .is-white 
@@ -303,7 +307,13 @@
 	& + .call-to-action
 		margin-top: -88px
 
-		
+#question
+	background: url(../img/contact-bg.jpg) bottom
+	background-size: cover
+	margin-top: 70px
+
+	.section-description
+		color: #cfcfcf
 
 .list-advantages
 	width: 800px
@@ -538,11 +548,32 @@
 				font-weight: 700
 				width: 80%
 				height: auto
-		.more
-			margin-top: 60px
+	.more
+		margin-top: 60px
 
 
-			
+.contact-form
+	max-width: 420px
+	margin-top: 50px
+	margin-left: auto
+	margin-right: auto
+	
+	input
+		width: 100%			
+		margin-bottom: 30px
+
+	button
+		width: 230px
+		margin: 0 auto
+		display: block
+
+	& + .pricacy
+		font-size: 10px
+		color: #b1b1b1
+		text-align: center
+		text-transform: uppercase
+		padding-top: 60px
+		padding-bottom: 30px
 
 .custom-content
 	h1,
