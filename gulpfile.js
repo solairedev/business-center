@@ -1,13 +1,13 @@
 var gulp           = require('gulp'),
-		gutil          = require('gulp-util' ),
-		sass           = require('gulp-sass'),
-		browserSync    = require('browser-sync'),
-		concat         = require('gulp-concat'),
-		uglify         = require('gulp-uglify'),
-		cleanCSS       = require('gulp-clean-css'),
-		rename         = require('gulp-rename'),
-		autoprefixer   = require('gulp-autoprefixer'),
-		notify         = require("gulp-notify");
+	gutil          = require('gulp-util' ),
+	sass           = require('gulp-sass'),
+	browserSync    = require('browser-sync'),
+	concat         = require('gulp-concat'),
+	uglify         = require('gulp-uglify'),
+	cleanCSS       = require('gulp-clean-css'),
+	rename         = require('gulp-rename'),
+	autoprefixer   = require('gulp-autoprefixer'),
+	notify         = require("gulp-notify");
 
 // Сервер и автообновление страницы Browsersync
 gulp.task('browser-sync', function() {
