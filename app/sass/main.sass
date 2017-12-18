@@ -93,6 +93,8 @@
 	background: #393c45 
 	width: 100%
 	.navbar-content
+		position: relative
+		right: 45px
 		@include flex-between
 		flex-direction: row
 
@@ -151,8 +153,20 @@
 	
 	&.is-invert
 		background-color: white
-		
 
+
+	&.is-square
+		border-radius: 10px
+
+	&.is-transparent
+		color: white
+		background: transparent
+		border: 1px solid white
+		
+		&:hover,
+		&:focus
+			color: #20252b
+			background: white
 
 
 .button.is-action
@@ -241,6 +255,9 @@
 		padding-left: 45px
 		background-position-x: 15px;
 
+	&.is-square
+		border-radius: 10px
+
 .header 
 	padding: 10px 0;
 	background: white
@@ -312,11 +329,27 @@
 		margin-top: -88px
 
 #question
-	background: url(../img/contact-bg.jpg) bottom
+	background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url(../img/contact-bg.png) top center
 	background-size: cover
+
+	.container,
+	.section-info
+		max-width: 425px
+
+	.section-content.is-footer
+		padding-bottom: 30px
+
+	.title
+		text-align: left
+		font-weight: bold
+		text-transform: uppercase
 
 	.section-description
 		color: #cfcfcf
+
+	.button	
+		height: 50px
+
 
 .list-advantages
 	max-width: 800px
@@ -428,7 +461,7 @@
 
 
 .offers
-	max-width: 1030px
+	max-width: 1165px
 	margin: 0 auto
 	.offer-item
 		box-shadow: 0px 0px 40px 0px rgba(236,236,236,0.75);
@@ -543,7 +576,6 @@
 				font-weight: 700
 		
 		.offer-action
-			border-top: 1px solid #e5e5e5
 			width: 100%;
 			padding: 25px 0
 			@include flex-center
@@ -572,14 +604,20 @@
 		margin: 0 auto
 		display: block
 
+		&.is-left
+			margin-left: 0
+
 	& + .pricacy
-		font-size: 1rem
+		font-size: 0.8rem
 		color: #b1b1b1
-		text-align: center
+		text-align: left
 		text-transform: uppercase
-		padding-top: 60px
+		padding-top: 5px
 		padding-bottom: 30px
 		margin-bottom: 0
+
+		a
+			color: $action
 
 .custom-content
 	padding: 0 25px;
@@ -619,6 +657,7 @@
 
 .features
 	margin-top: 105px
+	max-width: 1095px
 	@include flex-around
 	.features-item
 		max-width: 420px
@@ -700,9 +739,7 @@
 
 
 .footer
-	height: 275px
 	width: 100%;
-	background: #2a2a2a
 	position: relative
 
 	.contact-banner
@@ -711,6 +748,44 @@
 		right: 0
 		margin: 0 auto
 		bottom: 90px
+
+	.phone-wrap	
+		background: #ffc834
+		color: white
+		padding: 0 3rem
+		font-size: 3rem
+		.section-info
+			text-align: left
+			padding: 3rem 0
+			img
+				margin-right: .2rem
+				position: relative
+				top: 0.8rem
+
+			a
+				color: white
+
+	.copyright
+		padding: 0 1rem
+		background: white
+		color: #545353
+
+		font-size: 1rem
+		text-align: left
+
+		.author
+			text-align: center 
+
+#contact
+	&.section 
+		padding-top: 0
+
+	.container
+		max-width: 400px
+
+	.section-info
+		max-width: 425px
+
 
 .politician
 	width: 100%;
